@@ -8,9 +8,24 @@
 </head>
 <body>
 
-<h1>test</h1>
+<h1>Svelte/TypeScript custom elements</h1>
+
+<p>
+    Titta i consolen för att testa att manipulera dem utifrån.
+</p>
 
 <shb-happy></shb-happy>
+<shb-happy></shb-happy>
+<shb-happy></shb-happy>
 
+<script>
+    const happies = Array.from(document.querySelectorAll("shb-happy"));
+
+    console.log(`inject configs into any of the ${ happies.length } happies!
+Example:
+
+happies[0].setConfig({ name: "Dick", lang: "en" });
+`);
+</script>
 </body>
 </html>

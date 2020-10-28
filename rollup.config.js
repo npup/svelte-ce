@@ -2,11 +2,13 @@ import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import svelte from "rollup-plugin-svelte";
 
+import autoPreprocess from "svelte-preprocess";
 
 const plugins = [
     svelte({
         customElement: true,
         extensions: [ ".svelte" ],
+        preprocess: autoPreprocess(),
     }),
     resolve({
         browser: true,
@@ -14,7 +16,6 @@ const plugins = [
     }),
     commonjs(),
 ];
-
 
 module.exports = {
     input: "src/Happy.svelte",
